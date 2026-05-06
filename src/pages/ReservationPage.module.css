@@ -1,0 +1,114 @@
+.page {
+  max-width: 480px;
+}
+
+.back {
+  background: transparent;
+  color: #aaa;
+  padding: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.back:hover {
+  color: #fff;
+}
+
+.page h2 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.error {
+  background: #2d1010;
+  color: #fc8181;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.field select {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #e0e0e0;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.field select:focus {
+  outline: none;
+  border-color: #e53e3e;
+}
+
+.hint {
+  color: #666;
+  font-size: 14px;
+}
+
+.timeGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeBtn {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.timeBtn:hover {
+  border-color: #e53e3e;
+  color: #e53e3e;
+}
+
+.timeBtn.selected {
+  background: #e53e3e;
+  border-color: #e53e3e;
+  color: #fff;
+}
+
+.submitBtn {
+  background: #e53e3e;
+  color: #fff;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #c53030;
+}
+
+.submitBtn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+}
