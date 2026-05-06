@@ -83,7 +83,7 @@
   font-size: 14px;
 }
 
-.timeBtn:hover {
+.timeBtn:not(.unavailable):hover {
   border-color: #e53e3e;
   color: #e53e3e;
 }
@@ -92,6 +92,24 @@
   background: #e53e3e;
   border-color: #e53e3e;
   color: #fff;
+}
+
+.timeBtn.unavailable {
+  background: #1a1a1a;
+  border-color: #2d2d2d;
+  color: #555;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 11px;
+  background: #2d2d2d;
+  color: #666;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .submitBtn {

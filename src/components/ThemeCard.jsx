@@ -4,7 +4,8 @@ export default function ThemeCard({ theme, rank }) {
   return (
     <div className={styles.card}>
       {rank && <span className={styles.rank}>#{rank}</span>}
-      <p className={styles.name}>{theme.themeName}</p>
+      <p className={styles.name}>{theme.name}</p>
+      {theme.description && <p className={styles.desc}>{theme.description}</p>}
     </div>
   );
 }

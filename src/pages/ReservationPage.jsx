@@ -28,7 +28,7 @@ export default function ReservationPage({ onConfirm, onBack }) {
     setLoadingTimes(true);
     setSelectedTime('');
     fetchAvailableTimes(date, selectedTheme)
-      .then((data) => setTimes(data['available-times'] ?? []))
+      .then(setTimes)
       .catch((e) => setError(e.message))
       .finally(() => setLoadingTimes(false));
   }, [selectedTheme, date]);
@@ -70,8 +70,8 @@ export default function ReservationPage({ onConfirm, onBack }) {
           >
             <option value="">테마를 선택하세요</option>
             {themes.map((t) => (
-              <option key={t.themeId} value={t.themeId}>
-                {t.themeName}
+              <option key={t.id} value={t.id}>
+                {t.name}
               </option>
             ))}
           </select>
@@ -101,10 +101,12 @@ export default function ReservationPage({ onConfirm, onBack }) {
                   <button
                     key={t.id}
                     type="button"
-                    className={`${styles.timeBtn} ${selectedTime === String(t.id) ? styles.selected : ''}`}
-                    onClick={() => setSelectedTime(String(t.id))}
+                    disabled={!t.isAvailable}
+                    className={`${styles.timeBtn} ${!t.isAvailable ? styles.unavailable : ''} ${selectedTime === String(t.id) ? styles.selected : ''}`}
+                    onClick={() => t.isAvailable && setSelectedTime(String(t.id))}
                   >
-                    {t.startAt}
+                    {t.startAt.slice(0, 5)}
+                    {!t.isAvailable && <span className={styles.tag}>예약됨</span>}
                   </button>
                 ))}
               </div>

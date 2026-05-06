@@ -8,9 +8,9 @@ export default function ConfirmPage({ reservation, onHome }) {
 
       <div className={styles.card}>
         <Row label="예약 번호" value={`#${reservation.id}`} />
-        <Row label="테마" value={reservation.themeName} />
+        <Row label="테마" value={reservation.theme.name} />
         <Row label="날짜" value={reservation.date} />
-        <Row label="시간" value={reservation.time.startAt} />
+        <Row label="시간" value={reservation.time.startAt.slice(0, 5)} />
         <Row label="예약자" value={reservation.name} />
       </div>
 

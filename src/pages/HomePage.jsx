@@ -37,7 +37,7 @@ export default function HomePage({ onReserve }) {
           <h3>🔥 인기 테마 TOP {popular.length}</h3>
           <div className={styles.grid}>
             {popular.map((t, i) => (
-              <ThemeCard key={t.themeId} theme={t} rank={i + 1} />
+              <ThemeCard key={t.id} theme={t} rank={i + 1} />
             ))}
           </div>
         </section>
@@ -47,7 +47,7 @@ export default function HomePage({ onReserve }) {
         <h3>전체 테마</h3>
         <div className={styles.grid}>
           {themes.map((t) => (
-            <ThemeCard key={t.themeId} theme={t} />
+            <ThemeCard key={t.id} theme={t} />
           ))}
         </div>
       </section>
