@@ -1,0 +1,90 @@
+.page {
+    max-width: 480px;
+    margin: 0 auto;
+}
+.back {
+    background: transparent;
+    color: #aaa;
+    padding: 0;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+.back:hover { color: #fff; }
+.page h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.searchForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.searchBtn {
+    background: #3182ce;
+    color: #fff;
+    flex-shrink: 0;
+}
+.searchBtn:hover { background: #2b6cb0; }
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 40px 0;
+}
+.list { display: flex; flex-direction: column; gap: 16px; }
+.card {
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.themeName { font-size: 18px; color: #fff; font-weight: bold; margin-bottom: 4px; }
+.dateTime { font-size: 14px; color: #aaa; }
+.deleteBtn {
+    background: transparent;
+    color: #e53e3e;
+    border: 1px solid #e53e3e;
+    padding: 8px 16px;
+}
+.deleteBtn:hover { background: #e53e3e; color: #fff; }
+
+/* 모달 스타일 */
+.modalOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.modal {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    border: 1px solid #333;
+}
+.modal h3 { color: #fff; margin-bottom: 20px; font-size: 18px; }
+.modalInfo {
+    background: #111;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    text-align: left;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.modalInfo strong { color: #fff; }
+.modalActions { display: flex; gap: 10px; }
+.modalActions button { flex: 1; padding: 12px; }
+.cancelBtn { background: #333; color: #fff; }
+.cancelBtn:hover { background: #444; }
+.confirmDeleteBtn { background: #e53e3e; color: #fff; }
+.confirmDeleteBtn:hover { background: #c53030; }

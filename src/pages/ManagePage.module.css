@@ -1,0 +1,43 @@
+.page { max-width: 480px; margin: 0 auto; padding-bottom: 60px; }
+.back { background: transparent; color: #aaa; padding: 0; margin-bottom: 24px; font-size: 14px; }
+.back:hover { color: #fff; }
+.page h2 { font-size: 28px; color: #fff; margin-bottom: 24px; }
+
+.form {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; color: #aaa; font-weight: bold; }
+.btnGroup { display: flex; gap: 10px; margin-top: 10px; }
+.btnGroup button { flex: 1; }
+
+.submitBtn { background: #3182ce; color: #fff; }
+.submitBtn:hover { background: #2b6cb0; }
+.cancelBtn { background: #444; color: #fff; }
+.cancelBtn:hover { background: #555; }
+
+.list { display: flex; flex-direction: column; gap: 12px; list-style: none; }
+.card {
+    background: #1e1e1e;
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info strong { color: #fff; font-size: 16px; display: block; margin-bottom: 4px; }
+.info p { color: #aaa; font-size: 13px; }
+.actions { display: flex; gap: 8px; }
+
+.editBtn { background: transparent; color: #ecc94b; border: 1px solid #ecc94b; padding: 6px 12px; font-size: 12px;}
+.editBtn:hover { background: #ecc94b; color: #000; }
+.deleteBtn { background: transparent; color: #e53e3e; border: 1px solid #e53e3e; padding: 6px 12px; font-size: 12px;}
+.deleteBtn:hover { background: #e53e3e; color: #fff; }
