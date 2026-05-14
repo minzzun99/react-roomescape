@@ -4,13 +4,16 @@ const parseResponse = async (response) => {
   if (!response.ok) {
     let errorMsg = `${response.status} ${response.statusText}`;
     try {
-      // 백엔드에서 보낸 {"message": "..."} JSON 파싱 시도
+      // ProblemDetail 규격인 'detail' 필드를 최우선으로 파싱하고,
+      // 기존 하위 호환성을 위해 'message' 필드도 확인합니다.
       const errorData = await response.json();
-      if (errorData.message) {
+      if (errorData.detail) {
+        errorMsg = errorData.detail;
+      } else if (errorData.message) {
         errorMsg = errorData.message;
       }
     } catch (e) {
-      // JSON이 아니면 기존 HTTP 에러 메시지 유지
+      // JSON 파싱 실패 시 기존 HTTP 에러 메시지 유지
     }
     throw new Error(errorMsg);
   }
@@ -31,7 +34,6 @@ export const fetchTheme = (id) => fetchJson(`/themes/${id}`);
 export const createTheme = (body) => fetchJson('/themes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 export const deleteTheme = (id) => fetchJson(`/themes/${id}`, { method: 'DELETE' });
 
-// 🔥 내다 버렸던 인기 테마 API 복구 (파라미터가 없으면 기본값 10을 사용하도록 유연하게 작성)
 export const fetchPopularThemes = (topCount = 10, during = 10) =>
     fetchJson(`/themes?topCount=${topCount}&during=${during}`);
 
@@ -52,7 +54,6 @@ export const updateTime = (id, body) => fetchJson(`/times/${id}`, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(body)
 });
-
 
 // --- Reservation API (User Domain) ---
 export const getReservationsByName = (userName) => fetchJson(`/reservations?userName=${userName}`);
