@@ -47,20 +47,22 @@
   font-weight: 600;
 }
 
-.field select {
-  background: #1e1e1e;
-  border: 1px solid #444;
+.field select,
+.field input[type="date"] {
+  background: #ffffff;
+  border: 1px solid #cccccc;
   border-radius: 6px;
   padding: 10px 14px;
-  color: #e0e0e0;
+  color: #333333;
   font-size: 14px;
   width: 100%;
   cursor: pointer;
 }
 
-.field select:focus {
+.field select:focus,
+.field input[type="date"]:focus {
   outline: none;
-  border-color: #e53e3e;
+  border-color: #3182ce;
 }
 
 .hint {
@@ -75,29 +77,29 @@
 }
 
 .timeBtn {
-  background: #1e1e1e;
-  border: 1px solid #444;
-  color: #e0e0e0;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  color: #333333;
   padding: 10px 20px;
   border-radius: 6px;
   font-size: 14px;
 }
 
 .timeBtn:not(.unavailable):hover {
-  border-color: #e53e3e;
-  color: #e53e3e;
+  border-color: #3182ce;
+  color: #3182ce;
 }
 
 .timeBtn.selected {
-  background: #e53e3e;
-  border-color: #e53e3e;
-  color: #fff;
+  background: #3182ce;
+  border-color: #3182ce;
+  color: #ffffff;
 }
 
 .timeBtn.unavailable {
-  background: #1a1a1a;
-  border-color: #2d2d2d;
-  color: #555;
+  background: #eeeeee;
+  border-color: #cccccc;
+  color: #888888;
   cursor: not-allowed;
   display: flex;
   align-items: center;
@@ -113,7 +115,7 @@
 }
 
 .submitBtn {
-  background: #e53e3e;
+  background: #3182ce;
   color: #fff;
   font-size: 15px;
   padding: 14px;
@@ -122,7 +124,7 @@
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: #c53030;
+  background: #2b6cb0;
 }
 
 .submitBtn:disabled {
